@@ -8,23 +8,30 @@
 - Suggestions for Going Further
 
 ### Network Topology
-_TODO: Fill out the information below._
 
 The following machines were identified on the network:
-- Name of VM 1
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Name of VM 2
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Etc.
+- ELK
+  - **Operating System**: Linux
+  - **Purpose**: Collecting logs, Kibana dashboard
+  - **IP Address**:192.168.1.100
+- Kali
+  - **Operating System**: Linux
+  - **Purpose**:Penetration Testing
+  - **IP Address**:192.168.1.90
+- Target 1
+  - **Operating System**: Linux
+  - **Purpose**:Target server. A vulnerable WordPress server.
+  - **IP Address**:192.168.1.110
+- Capstone
+  - **Operating System**: Linux
+  - **Purpose**:Testing alerts
+  - **IP Address**:192.168.1.105
+
 
 ### Description of Targets
 _TODO: Answer the questions below._
 
-The target of this attack was: `Target 1` (TODO: IP Address).
+The target of this attack was: `Target 1` (IP: 192.168.1.110).
 
 Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are possible ports of entry for attackers. As such, the following alerts have been implemented:
 
