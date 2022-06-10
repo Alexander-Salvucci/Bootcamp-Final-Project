@@ -43,22 +43,22 @@ Traffic to these services should be carefully monitored. To this end, we have im
 _TODO: Replace `Alert 1` with the name of the alert._
 
 Alert 1 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+  - **Metric**: HTTP Response error codes
+  - **Threshold**: 400 over 5 minutes
+  - **Vulnerability Mitigated**: Brute force attack on the web server.
+  - **Reliability**: High. Will almost never false positive as web-server never recieves this much traffic, unless under attack.
 
 #### Name of Alert 2
 Alert 2 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+  - **Metric**: HTTP Request Bytes
+  - **Threshold**: 3500 Bytes over 1 minute
+  - **Vulnerability Mitigated**: Code injection and/or DDOS
+  - **Reliability**: Medium. If a DDOS attack is occuring, this will certainly trigger. It may also notice any of the more complicated code injection style attacks.
 
 #### Name of Alert 3
 Alert 3 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
+  - **Metric**: CPU Usage
+  - **Threshold**: above 50% for 5 minutes
   - **Vulnerability Mitigated**: TODO
   - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
 
