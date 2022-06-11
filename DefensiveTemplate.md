@@ -29,7 +29,7 @@ The following machines were identified on the network:
 
 
 ### Description of Targets
-_TODO: Answer the questions below._
+
 
 The target of this attack was: `Target 1` (IP: 192.168.1.110).
 
@@ -39,30 +39,29 @@ Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are pos
 
 Traffic to these services should be carefully monitored. To this end, we have implemented the alerts below:
 
-#### Name of Alert 1
+#### Excessive HTTP Errors
 _TODO: Replace `Alert 1` with the name of the alert._
 
 Alert 1 is implemented as follows:
   - **Metric**: HTTP Response error codes
   - **Threshold**: 400 over 5 minutes
-  - **Vulnerability Mitigated**: Brute force attack on the web server.
+  - **Vulnerability Mitigated**: Brute force attack or a scan of some sort on the web server.
   - **Reliability**: High. Will almost never false positive as web-server never recieves this much traffic, unless under attack.
 
-#### Name of Alert 2
+#### HTTP Request Size Monitor
 Alert 2 is implemented as follows:
   - **Metric**: HTTP Request Bytes
-  - **Threshold**: 3500 Bytes over 1 minute
-  - **Vulnerability Mitigated**: Code injection and/or DDOS
-  - **Reliability**: Medium. If a DDOS attack is occuring, this will certainly trigger. It may also notice any of the more complicated code injection style attacks. But if traffic to the website goes up, this will also give us false positives.
+  - **Threshold**: 4000 Bytes over 1 minute
+  - **Vulnerability Mitigated**: Code injection, scanning, and/or DDOS
+  - **Reliability**: Medium. If a DDOS attack is occuring, this will certainly trigger. It may also notice any of the more complicated code injection style attacks. But if traffic to the website goes up, this will also give us lots of false positives.
 
-#### Name of Alert 3
+#### CPU Usage Monitor
 Alert 3 is implemented as follows:
   - **Metric**: CPU Usage
   - **Threshold**: above 50% for 5 minutes
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+  - **Vulnerability Mitigated**: DDOS attack, warning when the device is compromised.
+  - **Reliability**: Medium-High. Will alert us when the machine is working abnormally hard. Might give some false positives, especially if we make the web-server do something rather intensive.
 
-_TODO Note: Explain at least 3 alerts. Add more if time allows._
 
 ### Suggestions for Going Further (Optional)
 _TODO_: 
