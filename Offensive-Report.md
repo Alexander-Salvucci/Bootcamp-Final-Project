@@ -56,7 +56,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
     - **Exploit Used**
       - wpscan was able to identify two users on the Word Press website hosted by the webserver.
         - wpscan –-url http://192.168.1.110/wordpress -eu
-        - ![Wordpress Users](/images/wpscan-users.PNG)
+        ![Wordpress Users](/images/wpscan-users.PNG)
       - Then, we simply
   - `flag2.txt`: flag2{fc3fd58dcdad9ab23faca6e9a36e851c
     - **Exploit Used**
