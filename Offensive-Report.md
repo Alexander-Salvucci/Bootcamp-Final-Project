@@ -79,9 +79,18 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
         - mysql -u root -p
 
           ![Into MySQL](/images/mysql-in.PNG)
-      - Flag 3 was located in the wp_posts table in the wordpress database.
+      - Flag 3 was located in the wp_posts table in the wordpress database. We got there with:
         - show databases;
         - use wordpress;
         - show tables;
         - select * from wp_posts;
           ![Flag3](/images/flag3.PNG)
+  - `flag4` : flag4{715dea6c055b9fe3337544932f2941ce}
+    - **Exploit Used**
+      - Flag 4 was found by using ssh to log in as steven, and escalating privileges to root.
+      - First, we grabbed the password hash for steven from the MySQL table wp_users
+        - ![SQL Users](/images/wp-sql-users.PNG)
+      - We cracked that on our Kali machine using John the Ripper, giving us his password, which is pink84.
+      - steven has sudo privileges for python, so we used that to escalate our privileges to root. AS root, we found flag 4 in /root. (Below is a pic retracing the steps taken.)
+        - ![Gaining root and finding flag 4](/images/gaining-flag4.PNG)
+        - ![Flag 4](/images/flag4.PNG)
