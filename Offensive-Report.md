@@ -11,14 +11,31 @@ _TODO: Fill out the information below._
 Nmap scan results for each machine reveal the below services and OS details:
 
 ```bash
-$ nmap ... # TODO: Add command to Scan Target 1
-  # TODO: Insert scan output
+$ nmap -sV -O 192.168.1.110/24
+  
+  Nmap scan report for 192.168.1.110
+  Host is up (0.0088s latency)
+  Not shown: 995 closed ports
+  PORT      STATE  SERVICE         VERSION
+  22/tcp    open   ssh             OpenSSH 6.7p1 Debian 5_deb8u4 (protocol 2.0)
+  80/tcp    open   http            Apache httpd 2.4.10 ((Debian))
+  111/tcp   open   rpcbind         2-4 (RPC #100000)
+  139/tcp   open   netbios-ssn     Samba smdb 3.X - 4.X (workgroup: WORKGROUP)
+  445/tcp   open   netbios-ssn     Samba smdb 3.X - 4.X (workgroup: WORKGROUP)
+  MAC Address: 00:15:5D:00:04:11 (Microsoft)
+  Running: Linux 3.X|4.X
+  OS CPE: cpe:/o:/linux:linux_kernel:3  cpe:/o:linux;linux_kernel:4
+  OS details: LInux 3.2 - 4.9
 ```
 
 This scan identifies the services below as potential points of entry:
 - Target 1
-  - List of
-  - Exposed Services
+  - ssh (port 22)
+  - http (port 80)
+  - rpcbind (port 111)
+  - netbios-ssn (port 139)
+  - netbios-ssn (port 445)
+
 
 _TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
 
@@ -39,7 +56,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
     - **Exploit Used**
       - _TODO: Identify the exploit used_
       - _TODO: Include the command run_
-  - `flag2.txt`: _TODO: Insert `flag2.txt` hash value_
+  - `flag2.txt`: flag2{fc3fd58dcdad9ab23faca6e9a36e851c
     - **Exploit Used**
       - _TODO: Identify the exploit used_
       - _TODO: Include the command run_
