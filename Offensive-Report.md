@@ -67,5 +67,5 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
   - `flag2.txt`: flag2{fc3fd58dcdad9ab23faca6e9a36e851c
     - **Exploit Used**
       - While connected in as michael, flag 2 was found in the website's root directory.
-        - found using find / -type f -inmae *flag* 2>/dev/null
+        - found using find / -type f -iname *flag* 2>/dev/null
           ![flag2](/images/flag2.PNG)
