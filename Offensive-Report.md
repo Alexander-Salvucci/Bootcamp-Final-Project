@@ -48,7 +48,6 @@ The following vulnerabilities were identified on each target:
 _TODO: Include vulnerability scan results to prove the identified vulnerabilities._
 
 ### Exploitation
-_TODO: Fill out the details below. Include screenshots where possible._
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 - Target 1
@@ -94,3 +93,4 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
       - steven has sudo privileges for python, so we used that to escalate our privileges to root. AS root, we found flag 4 in /root. (Below is a pic retracing the steps taken.)
         - ![Gaining root and finding flag 4](/images/gaining-flag4.PNG)
         - ![Flag 4](/images/flag4.PNG)
+  - With that, all 4 flags have been found.
