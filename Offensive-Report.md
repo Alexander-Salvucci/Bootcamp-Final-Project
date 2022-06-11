@@ -55,12 +55,17 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
   - `flag1.txt`: _TODO: Insert `flag1.txt` hash value_
     - **Exploit Used**
       - wpscan was able to identify two users on the Word Press website hosted by the webserver.
-        - wpscan –-url http://192.168.1.110/wordpress -eu
+        - wpscan –-url http://192.168.1.110/wordpress -e
         ![Wordpress Users](/images/wpscan-users.PNG)
       - Then, we simply attempted to ssh as these users into the machine. This proved simple, as Michael's password is michael.
         - ssh michael@192.168.1.110
           ![Successful ssh](/images/ssh-michael.PNG)
+      - flag 1 was found inside /var/www/html
+        - cd /var/www
+        - grep -R flag html
+          ![flag1](/images/flag1.PNG)
   - `flag2.txt`: flag2{fc3fd58dcdad9ab23faca6e9a36e851c
     - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
+      - While connected in as michael, flag 2 was found in the website's root directory.
+        - found using find / -type f -inmae *flag* 2>/dev/null
+          ![flag2](/images/flag2.PNG)
