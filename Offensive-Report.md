@@ -52,7 +52,7 @@ _TODO: Fill out the details below. Include screenshots where possible._
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 - Target 1
-  - `flag1.txt`: _TODO: Insert `flag1.txt` hash value_
+  - `flag1.txt`: flag1{b9bbcb33e11b80be759c4e844862482d}
     - **Exploit Used**
       - wpscan was able to identify two users on the Word Press website hosted by the webserver.
         - wpscan –-url http://192.168.1.110/wordpress -e
