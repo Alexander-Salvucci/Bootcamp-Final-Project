@@ -77,6 +77,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
           ![wp-config credentials](/images/mysql-logins.PNG)
       - Using those, we could log into MySQL as root.
         - mysql -u root -p
+
           ![Into MySQL](/images/mysql-in.PNG)
       - Flag 3 was located in the wp_posts table in the wordpress database.
         - show databases;
