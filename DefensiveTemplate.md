@@ -53,7 +53,7 @@ Alert 2 is implemented as follows:
   - **Metric**: HTTP Request Bytes
   - **Threshold**: 3500 Bytes over 1 minute
   - **Vulnerability Mitigated**: Code injection and/or DDOS
-  - **Reliability**: Medium. If a DDOS attack is occuring, this will certainly trigger. It may also notice any of the more complicated code injection style attacks.
+  - **Reliability**: Medium. If a DDOS attack is occuring, this will certainly trigger. It may also notice any of the more complicated code injection style attacks. But if traffic to the website goes up, this will also give us false positives.
 
 #### Name of Alert 3
 Alert 3 is implemented as follows:
