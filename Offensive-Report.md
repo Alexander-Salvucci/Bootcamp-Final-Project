@@ -36,15 +36,18 @@ This scan identifies the services below as potential points of entry:
   - netbios-ssn (port 445)
 
 
-_TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
-
 The following vulnerabilities were identified on each target:
 - Target 1
-  - List of
-  - Critical
-  - Vulnerabilities
+  - Wordpress User enumeration (CVE-2009-2335)
+    - wpscan can identify valid usernames
+  - Insecure passwords
+    - One user has his username as his password. Other user's password is only 6 characters long, containing only letters and numbers.
+  - MySQL Login credentials are located in wordpress configuration files
+  - Unsalted password hashes contained in MySQL database
+    - password hash for Steven was easy to crack due to being unsalted.
+  - Steven has sudo access for python.
+    - Running python with sudo can easily get one root access.
 
-_TODO: Include vulnerability scan results to prove the identified vulnerabilities._
 
 ### Exploitation
 
