@@ -11,12 +11,18 @@ At least two users on the network have been wasting time on YouTube. Usually, IT
 
 You must inspect your traffic capture to answer the following questions in your Network Report:
 1. What is the domain name of the users' custom site?
+  - Found after plenty of research:
+  - Given that they have set up an active directory network, I decided to look specifically for packets with Kerberos. The active directory network will use Kerberos for authentication.
+    - To do this I filtered by kerberos.crealm. I chose crealm, as we know they're using a specific domain name.
+  - The only kerberos crealm that appears in the IP range is frank-n-ted.com.
 2. What is the IP address of the Domain Controller (DC) of the AD network?
+  - It appears that the IP address is 10.6.12.12
 3. What is the name of the malware downloaded to the 10.6.12.203 machine?
-   - Once you have found the file, export it to your Kali machine's desktop.
+   - 10.6.12.203 made a GET HTTP request for a file called june11.dll. This appears to be the malware.
 
 4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). 
 5. What kind of malware is this classified as?
+  - Virus total classifies it as a trojan.
 
 #### Vulnerable Windows Machines
 
