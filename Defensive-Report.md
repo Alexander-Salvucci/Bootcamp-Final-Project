@@ -42,8 +42,8 @@ Traffic to these services should be carefully monitored. To this end, we have im
 #### Excessive HTTP Errors
 
 This alert is implemented as follows:
-  - **Metric**: HTTP Response error codes
-  - **Threshold**: 400 over 5 minutes
+  - **Metric**: HTTP Response codes
+  - **Threshold**: Any code over 400 is among the top 5 in the last 5 minutes
   - **Vulnerability Mitigated**: Brute force attack or a scan of some sort on the web server.
   - **Reliability**: High. Will almost never false positive as web-server never recieves this much traffic, unless under attack.
 
