@@ -50,7 +50,7 @@ This alert is implemented as follows:
 #### HTTP Request Size Monitor
 This alert is implemented as follows:
   - **Metric**: HTTP Request Bytes
-  - **Threshold**: 4000 Bytes over 1 minute
+  - **Threshold**: 6,000 Bytes over 1 minute (Originally 3,500, but that gave way to many false positives.)
   - **Vulnerability Mitigated**: Code injection, scanning, and/or DDOS
   - **Reliability**: Medium. If a DDOS attack is occuring, this will certainly trigger. It may also notice any of the more complicated code injection style attacks. But if traffic to the website goes up, this will also give us lots of false positives.
 
