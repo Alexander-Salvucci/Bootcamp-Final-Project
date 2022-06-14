@@ -18,7 +18,7 @@ You must inspect your traffic capture to answer the following questions in your 
 2. What is the IP address of the Domain Controller (DC) of the AD network?
   - It appears that the IP address is 10.6.12.12
 3. What is the name of the malware downloaded to the 10.6.12.203 machine?
-   - 10.6.12.203 made a GET HTTP request for a file called june11.dll. This appears to be the malware.
+  - 10.6.12.203 made a GET HTTP request for a file called june11.dll. This appears to be the malware.
 
 4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). 
 5. What kind of malware is this classified as?
@@ -35,12 +35,15 @@ The Security team received reports of an infected Windows host on the network. T
 Inspect your traffic to answer the following questions in your network report:
 
 1. Find the following information about the infected Windows machine:
-    - Host name
-    - IP address
-    - MAC address
+  - All traffic coming from 172.16.4.4, which we know is the DC for this network is going to the same computer. That one computer's info is:
+    - Host name: ROTTERDAM-PC (Found in NBNS packets from this IP address.)
+    - IP address: 172.16.4.205
+    - MAC address: 00:59:07:b0:63:a4
     
 2. What is the username of the Windows user whose computer is infected?
+  - According to the Kerberos packets, the username appears to be matthijs.devries
 3. What are the IP addresses used in the actual infection traffic?
+  - The majority of the traffic moving in and out of this pc is being sent to 185.243.115.84, so it is likely there.
 4. As a bonus, retrieve the desktop background of the Windows host.
 
 
