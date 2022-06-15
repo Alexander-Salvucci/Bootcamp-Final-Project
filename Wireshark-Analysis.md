@@ -60,11 +60,12 @@ IT shared the following about the torrent activity:
 Your task is to isolate torrent traffic and answer the following questions in your Network Report:
 
 1. Find the following information about the machine with IP address `10.0.0.201`:
-    - MAC address
-    - Windows username
-    - OS version
+    - MAC address 00:16:17:18:66:c8 
+    - Windows username: elmer.blanco (from kerberos packets) 
+    - OS version: BLANCO-DESKTOP (also from kerberos packets)
 
 2. Which torrent file did the user download?
+    - Found by finding the first chronological packet with the BitTorrent protocol, and looking at HTML requests that happened shortly before it. A couple GET requests up is one for a bit torrent download for a file called Betty_Boop_Rhythm_on_the_Reservation.avi.torrent. What an odd thing to torrent.
 
 
 ---
